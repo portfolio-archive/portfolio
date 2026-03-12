@@ -671,7 +671,7 @@ a {
   height: 4px;
   left: 0;
   transform: translateY(-2px);
-  background-image: url(/images/img-model-nav-dot.jpg);
+  background-image: url(images/img-model-nav-dot.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 1;
@@ -683,7 +683,7 @@ a {
   height: 4px;
   right: 0;
   transform: translateY(-2px);
-  background-image: url(/images/img-model-nav-dot.jpg);
+  background-image: url(images/img-model-nav-dot.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -739,14 +739,14 @@ a {
 .l-footer__top {
   width: 100%;
   height: 650px;
-  background-image: url(/images/img-cta.jpg);
+  background-image: url(images/img-cta.jpg);
   background-position: center;
   background-size: 100%;
 }
 @media screen and (max-width: 768px) {
   .l-footer__top {
     height: 600px;
-    background-image: url(/images/img-cta-logo_sp.png), url(/images/img-cta_sp.jpg);
+    background-image: url(images/img-cta-logo_sp.png), url(images/img-cta_sp.jpg);
     background-repeat: no-repeat, no-repeat;
     background-position: 50% 25%, center;
     background-size: 180px, 100vw;
