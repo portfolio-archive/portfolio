@@ -1,0 +1,24 @@
+# node_modulesをすべて除外（一番重要！）
+node_modules/
+
+# VBAファイルを除外
+*.vba
+
+# CSVファイルをすべて除外
+*.csv
+
+# Excelの一時ファイルやバックアップを除外
+~$*.xlsx
+~$*.xlsm
+*.tmp
+
+# MacやWindowsのシステムゴミファイル
+.DS_Store
+Thumbs.db
+
+# VS Codeの設定フォルダ（個人設定が含まれる場合があるため）
+.vscode/
+
+# その他、npmやyarnのログ
+npm-debug.log*
+yarn-error.log*
