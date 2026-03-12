@@ -35,7 +35,7 @@
 
         <% footerDiv.forEach(function(item){ %>
           <div class="l-footer__bottomItem js-animate js-fadeUp">
-            <a href="#"><img class="l-footer__bottomItemImg" src="/images/<%= item.img %>" alt="<%= item.alt %>">
+            <a href="#"><img class="l-footer__bottomItemImg" src="images/<%= item.img %>" alt="<%= item.alt %>">
             <p class="l-footer__bottomItemName"><%= item.name %></p></a>
           </div>
         <% }) %>
@@ -125,9 +125,9 @@
           slidesToScroll: 1,
           arrows: true,
           prevArrow:
-            '<button type="button" class="slick-prev custom-prev"><img src="/images/img-model-arrow-prev.png" alt=""></button>',
+            '<button type="button" class="slick-prev custom-prev"><img src="images/img-model-arrow-prev.png" alt=""></button>',
           nextArrow:
-            '<button type="button" class="slick-next custom-next"><img src="/images/img-model-arrow-next.png" alt=""></button>',
+            '<button type="button" class="slick-next custom-next"><img src="images/img-model-arrow-next.png" alt=""></button>',
             dots: true,
             dotsClass: 'dots-wrap',
         });
