@@ -169,7 +169,7 @@
               </div>
               <div class="p-main__memberItemTxtIntr">
                 <p class="p-main__memberItemTxtIntrItem">
-                  株式会社メゾンマークでデザインを見ています。<br />Webデザインが大好きで14歳のときに独学でコーディングを行い、趣味だったイラストのサイトをオープン<br />しました。そこからずっと独学で舌が、本格的にデザインを学びたいと思い上京して制作会社でデザイナー<br />とパリピな考えで女性系スナップメディアを運営している会社に転職し、デザイナーとしてメディア運営を<br />経験しました。<br />メゾンマークでは、webデザインだけではなくオフィスデザインやオフィシャルグッズのデザイン、案件に<br />よってはCIやDTPんだお様々な場面でデザイナーが活躍しています。
+                  株式会社メゾンマークでデザインを見ています。<br />Webデザインが大好きで14歳のときに独学でコーディングを行い、趣味だったイラストのサイトをオープン<br />しました。そこからずっと独学でしたが、本格的にデザインを学びたいと思い上京して制作会社でデザイナー<br />とパリピな考えで女性系スナップメディアを運営している会社に転職し、デザイナーとしてメディア運営を<br />経験しました。<br />メゾンマークでは、webデザインだけではなくオフィスデザインやオフィシャルグッズのデザイン、案件に<br />よってはCIやDTPんだお様々な場面でデザイナーが活躍しています。
                 </p>
               </div>
             </li>
@@ -241,7 +241,7 @@
               </div>
               <div class="p-main__memberItemTxtIntr">
                 <p class="p-main__memberItemTxtIntrItem">
-                  MAISON MARC CTOとして、開発責任者をしています。<br />最近はフロンt30%、バックエンド60%、インフラ10%くらいの割合で仕事してます。<br />web界隈の、「これ作って」に対して時間とリソースが許す限りは大体作れます。<br />もっとインフラやらないと...！
+                  MAISON MARC CTOとして、開発責任者をしています。<br />最近はフロント30%、バックエンド60%、インフラ10%くらいの割合で仕事してます。<br />web界隈の、「これ作って」に対して時間とリソースが許す限りは大体作れます。<br />もっとインフラやらないと...！
                 </p>
               </div>
             </li>
@@ -631,50 +631,61 @@
         const moreNum = 2;
         const btnTxt = document.querySelector(".p-main__hideBtnTxt");
         const btnArrow = document.querySelector(".p-main__hideBtnArrow");
+        const btnArea = document.querySelector(".p-main__hideBtn");
         const items = document.querySelectorAll(
           ".p-main__interviewItem.hideTarget, .p-main__intCard.hideTarget",
         );
         let expand = false;
+        let lastWidth = window.innerWidth <= 768;
 
         function updateView() {
-          if (window.innerWidth <= 768) {
-            let count = 0;
-            items.forEach((item) => {
-              if (item.classList.contains("p-main__interviewItem")) {
-                if (count < moreNum) {
-                  item.classList.remove("hide");
-                  count++;
+          const isMobile = window.innerWidth <= 768;
+
+          if (isMobile){
+            if (!expand) {
+              let count = 0;
+              items.forEach((item) => {
+                if (item.classList.contains("p-main__interviewItem")) {
+                  if (count < moreNum) {
+                    item.classList.remove("hide");
+                    count++;
+                  } else {
+                    item.classList.add("hide");
+                  }
                 } else {
                   item.classList.add("hide");
                 }
-              } else {
-                item.classList.add("hide");
-              }
-            });
-            btnTxt.textContent = "もっと見る";
-            btnArrow.classList.remove("open");
-            expand = false;
+              });
+              btnTxt.textContent = "もっと見る";
+              btnArrow.classList.remove("open");
+            } else {
+              items.forEach((item) => item.classList.remove("hide"));
+              btnTxt.textContent = "CLOSE";
+              btnArrow.classList.remove("open");
+            }
           } else {
             items.forEach((item) => item.classList.remove("hide"));
-            btnTxt.textContent = "";
-            btnArrow.classList.remove("open");
-            expand = true;
+              btnTxt.textContent = "";
+              btnArrow.classList.remove("open");
           }
-        }
+        };
 
         updateView();
+        
+        window.addEventListener("resize", () => {
+          if (window.innerWidth !== lastWidth){
+            lastWidth = window.innerWidth;
 
-        window.addEventListener("resize", updateView);
-
-        btnArrow.addEventListener("click", () => {
-          if (!expand) {
-            items.forEach((item) => item.classList.remove("hide"));
-            btnTxt.textContent = "CLOSE";
-            btnArrow.classList.add("open");
-            expand = true;
-          } else {
+            if (window.innerWidth > 768){
+              expand = false;
+            }
             updateView();
           }
+        });
+
+        btnArea.addEventListener("click", () => {
+            expand = !expand;
+            updateView();
         });
       });
     </script>
