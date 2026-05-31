@@ -147,10 +147,11 @@ html, body, main {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .p-main__Wrapper {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   padding: 2vh 4vw;
   gap: 3.5vh;
@@ -158,6 +159,7 @@ html, body, main {
 }
 .p-main__Wrapper .p-main__ttl {
   padding: 30px 0;
+  flex-shrink: 0;
 }
 .p-main__Wrapper .p-main__ttl h1 {
   display: inline-block;
@@ -168,13 +170,14 @@ html, body, main {
   paint-order: stroke;
 }
 .p-main__Wrapper .p-main__innner {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 .p-main__Wrapper .p-main__innner .p-main__itemWrapper {
   position: relative;
-  width: 76%;
+  width: 70%;
   height: 100%;
 }
 .p-main__Wrapper .p-main__innner .p-main__itemWrapper .p-main__Input {
@@ -211,7 +214,7 @@ html, body, main {
 .p-main__Wrapper .p-main__innner .p-main__itemWrapper .p-main__contents .p-main__contentsList {
   position: relative;
   list-style: none;
-  height: clamp(200px, 63vh, 800px);
+  height: clamp(200px, 65vh, 800px);
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -273,9 +276,10 @@ html, body, main {
 }
 .p-main__Wrapper .p-main__innner .p-main__santos {
   position: absolute;
-  width: 26%;
+  width: 38%;
   height: auto;
-  right: 0;
+  right: -6vw;
+  bottom: 0;
   object-fit: contain;
   pointer-events: none;
   z-index: 5;
